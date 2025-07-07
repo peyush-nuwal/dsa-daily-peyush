@@ -44,3 +44,4 @@ function calculateExpression(expression) {
 
 
 console.log("Output:",calculateExpression("3+23*2"));// Output: 7
+console.log("Output:",calculateExpression("3+23*2/4-2"));// Output: 7
