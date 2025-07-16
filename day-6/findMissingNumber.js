@@ -6,14 +6,14 @@ const findMN = (arr) => {
     return expectedSum - actualSum;
 }
 const findAllMissingBrute = (arr ) => {
-    const missing = [];
+    const map = new Map();
     const n = Math.max(...arr);
     for (let i = 0; i <= n; i++) {
-        if (!arr.includes(i)) {
-            missing.push(i);
+        if (!map.has(i)&& i!==arr[i] ) {
+            map.set(i,i);
         }
     }
-    return missing;
+    return map;
 };
 console.log("missing",findMN([3,0,1,4]))
 console.log("missing", findAllMissingBrute([3,0,1,4]))

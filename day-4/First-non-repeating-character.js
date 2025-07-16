@@ -31,12 +31,13 @@ const map=new Map()
 
 
 for (let ch of s) {
-     map.set(ch,(map.get(ch)||0)+1)
+    map.set(ch, (map.get(ch) || 0) + 1)
+    
 }
 
 for (let i = 0; i < s.length; i++){
     if (map.get(s[i]) === 1) {
-        console.log(i);
+        console.log(s[i]);
      return
     }
 }

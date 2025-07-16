@@ -4,14 +4,14 @@ function findDuplicates(nums) {
     
     for (let i = 0; i < nums.length; i++){
         const value = nums[i]
-        console.log("current index ", i,"ki value", value)
+   
         if (value === undefined) continue;
 
         let index = Math.abs(value);
         console.log("value of positve kiya",index)
         if (index === undefined) continue;
         
-        console.log("checking if its lower then 0 or not")
+       
         console.log(nums[index] < 0)
         if (nums[index] < 0) {
            
