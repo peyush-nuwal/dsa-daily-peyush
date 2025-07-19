@@ -10,6 +10,7 @@ function decodeString(s) {
             currentNumb = currentNumb * 10 + Number(s[i]);
         }
         else if (s[i] === '[') {
+            
             stack.push(currentString);
             stack.push(currentNumb);
             currentString = "";
