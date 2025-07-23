@@ -1,5 +1,6 @@
 // we are given a array of word now we have group the word by there anagrams
 function groupAnagrams(words) {
+  
     const map = new Map()
     
     for (let word of words) {
