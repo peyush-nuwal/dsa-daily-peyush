@@ -10,5 +10,3 @@ function kthSmallest(arr, k) {
 
 
 console.log(kthSmallest(arr, k)) // 7
-console.log(arr.sort((a, b) => a - b));
-console.log(arr.sort((a, b) => a + b));

@@ -18,7 +18,7 @@ const sorter = (arr) => {
     }
     for (let i = 0; i < c1; i++) {
         arr[idx++] = 1
-     console.log(idx);
+     
     }
 
     for (let i = 0; i < c2; i++) {

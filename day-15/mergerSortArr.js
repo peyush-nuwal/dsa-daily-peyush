@@ -28,7 +28,7 @@ function merge(arr1, arr2) {
     return temp
 }
 
-console.log(merge([2, 4, 6], [1, 3, 5, 7]));
+console.log(merge([2, 4, 6], [1,2, 3, 5, 7]));
 
 
 const sortMerge = (arr1, arr2) => {
@@ -39,7 +39,7 @@ const sortMerge = (arr1, arr2) => {
 
 
 
-console.log(sortMerge([2, 4, 6], [1, 3, 5, 7]));
+console.log(sortMerge([2, 4, 6], [1,2, 3, 5, 7]));
 
 
 
