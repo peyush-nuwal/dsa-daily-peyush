@@ -16,7 +16,7 @@ function calculateExpression(expression) {
             currentNumber = currentNumber * 10 + Number(char)
         }
 
-        if (/[+\-*]/.test(char) || i === n - 1) {
+        if (/[+\-*/]/.test(char) ) {
             switch (operation) {
                 case "+":
                     stack.push(currentNumber);
