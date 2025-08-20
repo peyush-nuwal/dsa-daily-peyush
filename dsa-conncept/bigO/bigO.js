@@ -19,3 +19,23 @@ const getItem = (itemData, itemIdx) => {
 }
 
 getItem(itemData, 3)
+
+
+
+// O(n^2),o(1) space
+
+const shoeData = [1, 1, 2, 3, 3, 4, 4]
+
+const findPair = (data) => {
+    for (let i = 0; i < data.length; i++){
+        for (let j = i+1; j < data.length; j++) { 
+
+            if (data[i] == data[j]) {
+                console.log(`pair of shoe ${data[i]} at index ${i},${j}`)
+            }
+
+        }
+    }
+}
+
+findPair(shoeData)
