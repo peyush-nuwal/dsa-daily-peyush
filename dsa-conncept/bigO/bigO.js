@@ -39,3 +39,7 @@ const findPair = (data) => {
 }
 
 findPair(shoeData)
+
+
+
+// O(log n) 
