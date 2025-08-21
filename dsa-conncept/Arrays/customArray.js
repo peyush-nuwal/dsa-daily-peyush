@@ -8,7 +8,8 @@ class myArray{
     add(value) {
         this.data[this.length]=value
         this.length += 1
-   }
+    }
+    
 }
 
 
