@@ -20,15 +20,26 @@ class myArray{
        return this.data
     }
     
+    shift() {
+        const firstItem = this.data[0]
+        for (let i = 0; i < this.length; i++){
+            this.data[i]=this.data[i+1]
+        }
+        delete this.data[this.length-1]
+        this.length--
+        return firstItem
+    }
 }
 
 
 const myNewArr = new myArray()
 console.log(myNewArr);
-myNewArr.add(2)
 myNewArr.add(1)
+myNewArr.add(2)
 myNewArr.add(3)
-myNewArr.get(1)
+// myNewArr.get(1)
 console.log(myNewArr);
-console.log(myNewArr.pop());
+// console.log(myNewArr.pop());
+// console.log(myNewArr);
+console.log(myNewArr.shift());
 console.log(myNewArr);
