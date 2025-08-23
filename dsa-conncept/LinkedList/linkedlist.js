@@ -51,7 +51,18 @@ class linkedList{
 
         return temp; // return the removed node
     }
- 
+    upShift() {
+        if (!this.head) return undefined;
+
+        let temp = this.head;
+        this.head = this.head.next
+        this.length--
+
+        if (this.length === 0) {
+            this.tail=0
+        }
+        return temp
+    }
 
     printList() {
         let current = this.head;
@@ -91,4 +102,6 @@ console.log("after insertaion", myLinkedList);
 // myLinkedList.printList()
 // console.log("fined",myLinkedList.find(2));
 console.log(myLinkedList.pop());
-console.log("after deletion ", myLinkedList);
+myLinkedList.printList()
+console.log("deletion from start ", myLinkedList.upShift());
+myLinkedList.printList()
