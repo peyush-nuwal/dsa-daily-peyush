@@ -27,19 +27,30 @@ class linkedList{
         this.length++
         
     }
-    pop() {
-        let temp = this.head
-        let prev = this.head
-        while (temp.next) {
-            prev = temp
-            temp=prev.next
-        }
-        this.tail = prev
-        this.tail.next = null
-        this.length--
-        return temp
-     }
 
+    pop() {
+        if (!this.head) return undefined; // case: empty list
+
+        let temp = this.head;
+        let prev = this.head;
+
+        while (temp.next) {
+            prev = temp;
+            temp = temp.next; // move temp forward
+        }
+
+        this.tail = prev;       // set tail to second last node
+        this.tail.next = null;  // detach last node
+        this.length--;
+
+        if (this.length === 0) {
+            // if list became empty, reset head & tail
+            this.head = null;
+            this.tail = null;
+        }
+
+        return temp; // return the removed node
+    }
  
 
     printList() {
