@@ -160,6 +160,31 @@ class LinkedList {
             currentIdx++
         }
     }
+    
+    deleteByIdx(idx) {
+        if (idx < 0 || idx >= this.length) return undefined;
+        if (idx === 0) return this.shift()
+        if (idx === this.length - 1) return this.pop()
+        
+        let current = this.head
+        let currIdx = 0
+        let prev = null
+        
+        while (current) {
+            
+            if (currIdx === idx) {
+                prev.next = current.next
+                this.length--
+                return  current.value
+            }
+            prev = current
+            current= prev.next
+
+             currIdx++   
+        }
+        return undefined
+    }
+
 }
 
 // --------------------
@@ -192,4 +217,9 @@ console.log("adding element at specific idx:", myLinkedList.insert(16,1));
 myLinkedList.printList();
 
 console.log("adding element at specific idx:", myLinkedList.insert(96, 3));
+myLinkedList.printList();
+
+
+
+console.log("delete element at specific idx:", myLinkedList.deleteByIdx(3));
 myLinkedList.printList();
