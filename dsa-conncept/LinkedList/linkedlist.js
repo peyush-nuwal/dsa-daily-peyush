@@ -138,6 +138,28 @@ class LinkedList {
         this.length++
         return this
     }
+
+    // adding element at specific index
+    insert(value, idx) {
+        if (!this.head || this.length - 1 <idx) return this.push(value)
+        if (idx===0) return this.unShift(value)
+
+        let currentIdx = 0
+        let current = this.head
+        let prev = null
+        const newNode=new Node(value)
+        while (current) {
+            if (currentIdx === idx) {
+                prev.next = newNode
+                newNode.next = current
+                this.length++
+                return newNode   // stop here, insertion done
+            }
+            prev = current
+            current = current.next
+            currentIdx++
+        }
+    }
 }
 
 // --------------------
@@ -164,4 +186,10 @@ myLinkedList.printList();
 
 
 console.log("adding element from start:", myLinkedList.unShift(8));
+myLinkedList.printList();
+
+console.log("adding element at specific idx:", myLinkedList.insert(16,1));
+myLinkedList.printList();
+
+console.log("adding element at specific idx:", myLinkedList.insert(96, 3));
 myLinkedList.printList();
