@@ -89,6 +89,42 @@ class linkedList{
         return res
     }
     
+    remove(value) {
+    // If list is empty, nothing to remove
+    if (!this.head) return undefined;
+
+    let current = this.head;
+    let prev = null;
+
+    while (current) {
+        // Case 1: deleting head node
+        // If the value matches and the node is head, just use shift()
+        if (current.value === value && current === this.head) {
+            return this.upShift();
+        }
+
+        // Case 2: deleting tail node
+        // If the value matches and the node is tail, just use pop()
+        if (current.value === value && current === this.tail) {
+            return this.pop();
+        }
+
+        // Case 3: deleting a middle node
+        // If the value matches somewhere in the middle, bypass it
+        if (current.value === value) {
+            prev.next = current.next;  // unlink current node
+            this.length--;             // decrease list length
+            return current;            // return removed node
+        }
+
+        // Move pointers forward
+        prev = current;
+        current = prev.next;
+    }
+
+    // Value not found in the list
+    return undefined;
+}
 }
 
 
@@ -104,4 +140,6 @@ console.log("after insertaion", myLinkedList);
 console.log(myLinkedList.pop());
 myLinkedList.printList()
 console.log("deletion from start ", myLinkedList.upShift());
+myLinkedList.printList()
+console.log("deleting speific element ", myLinkedList.remove(3));
 myLinkedList.printList()
