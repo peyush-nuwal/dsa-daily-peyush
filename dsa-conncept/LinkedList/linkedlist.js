@@ -203,7 +203,21 @@ class LinkedList {
         return undefined;
       }
 
+    //reverse 
+    reverse() {
+        let prev = null
+        let current = this.head
+        let next = null
+        
+        while (current) {
+            next = current.next
+            current.next = prev
+            prev = current
+            current=next
+        }
 
+        this.head =prev
+    }
 }
 
 // --------------------
@@ -244,4 +258,9 @@ console.log("delete element at specific idx:", myLinkedList.deleteByIdx(3));
 myLinkedList.printList();
 
 console.log("inswert valye at  specific idx:", myLinkedList.set(66,2));
+myLinkedList.printList();
+
+
+
+console.log("Reverseing thie linkedlist", myLinkedList.reverse());
 myLinkedList.printList();
