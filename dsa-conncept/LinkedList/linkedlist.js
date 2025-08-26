@@ -185,6 +185,25 @@ class LinkedList {
         return undefined
     }
 
+    set(value, idx) {
+        if (idx < 0 || idx >= this.length) return undefined;
+
+        let current = this.head;
+        let currentIdx = 0;
+
+        while (current) {
+            if (currentIdx === idx) {
+                current.value = value;
+                return current;
+            }
+            current = current.next;
+            currentIdx++;
+        }
+
+        return undefined;
+      }
+
+
 }
 
 // --------------------
@@ -222,4 +241,7 @@ myLinkedList.printList();
 
 
 console.log("delete element at specific idx:", myLinkedList.deleteByIdx(3));
+myLinkedList.printList();
+
+console.log("inswert valye at  specific idx:", myLinkedList.set(66,2));
 myLinkedList.printList();
