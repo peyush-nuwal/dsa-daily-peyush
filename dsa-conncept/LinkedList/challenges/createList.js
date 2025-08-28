@@ -4,7 +4,7 @@ function ListNode(val, next = null) {
 }
 
 
-const node = new ListNode(1)
+const head = new ListNode(1)
 
 
 // your add function
@@ -16,7 +16,19 @@ const add = (value) => {
     current.next = new ListNode(value);  // attach new node
 };
 
+const printList=()=>{
+    let current = head
+    let res=[]
+    while (current) {
+        res.push(current.val)
+        current=current.next
+    }
+
+    return res.join("->")
+}
+
 add(2);
 add(3);
-
-console.log(node)
+add(4);
+console.log("print list", printList())
+console.log(head)
