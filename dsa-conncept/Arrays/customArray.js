@@ -52,6 +52,7 @@ myNewArr.add(3)
 myNewArr.add(4)
 myNewArr.add(5)
 myNewArr.add(6)
+myNewArr.add(7)
 
 console.log(myNewArr);
 
