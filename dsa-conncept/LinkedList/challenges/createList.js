@@ -9,9 +9,14 @@ const node = new ListNode(1)
 
 // your add function
 const add = (value) => {
-    node.next = value;
+    let current = head;
+    while (current.next !== null) {
+        current = current.next;  // go to last node
+    }
+    current.next = new ListNode(value);  // attach new node
 };
 
 add(2);
+add(3);
 
 console.log(node)
