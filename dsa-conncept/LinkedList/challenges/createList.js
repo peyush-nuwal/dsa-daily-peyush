@@ -27,8 +27,21 @@ const printList=()=>{
     return res.join("->")
 }
 
+const pop=() => {
+    let current = head
+    let prev=null
+    while (current.next) {
+         prev=current
+        current = prev.next
+    }
+    prev.next = null
+    return current
+
+}
+
 add(2);
 add(3);
 add(4);
 console.log("print list", printList())
-console.log(head)
+console.log("delete last element",pop())
+console.log("print list", printList())
